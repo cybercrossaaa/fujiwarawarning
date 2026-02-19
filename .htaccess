@@ -1,6 +1,13 @@
 AddDefaultCharset UTF-8
 
 
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^fujiwara-fact\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.fujiwara-fact\.org$
+RewriteRule ^(.*)$ https://fujiwara-warning.org/$1 [R=301,L]
+
+
+
 AddType "text/html; charset=UTF-8" .html
 AddType "text/css; charset=UTF-8" .css
 AddType "application/javascript; charset=UTF-8" .js
